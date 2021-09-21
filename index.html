@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+    <title>Clock XD</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header-section">
+        <div class="header-logo">
+          <img
+            src="./assets/images/logos/clock_logo.png"
+            alt="clock_logo"
+          />
+        </div>
+        <div class="header-time">
+          <div class="header-time-label">
+            <span>time</span>
+          </div>
+          <div class="header-time-display">
+            <div
+              class="header-time-display-section"
+              id="header-time-display-section-hours"
+            >
+              <div class="value">-</div>
+              <div class="label">hours</div>
+            </div>
+            <div class="header-time-display-section-gap">
+              <span>:</span>
+            </div>
+            <div
+              class="header-time-display-section"
+              id="header-time-display-section-mins"
+            >
+              <div class="value">-</div>
+              <div class="label">mins</div>
+            </div>
+            <div class="header-time-display-section-gap">
+              <span>:</span>
+            </div>
+            <div
+              class="header-time-display-section"
+              id="header-time-display-section-secs"
+            >
+              <div class="value">-</div>
+              <div class="label">secs</div>
+            </div>
+            <div class="header-time-display-section-gap"></div>
+            <div
+              class="
+                header-time-display-section
+                header-time-display-section-ampm
+              "
+              id="header-time-display-section-ampm"
+            >
+              <span>AM</span>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="main-section">
+        <div class="main-actions">
+          <div class="main-actions-inputs">
+            <div class="main-actions-input" id="wakeup-time">
+              <div class="main-actions-input-label">
+                <div class="main-actions-input-icon">
+                  <img
+                    src="./assets/images/icons/wake_up_icon.png"
+                    alt="wake up icon png"
+                  />
+                </div>
+                <div class="main-actions-input-text">
+                  <span>set wake up time</span>
+                </div>
+              </div>
+              <div class="main-actions-input-list">
+                <div class="select">
+                  <div class="select-trigger">
+                    <span>8 AM - 9 AM</span>
+                    <div class="arrow">&#9660;</div>
+                  </div>
+                  <div class="custom-options">
+                    <span class="custom-option" data-value="08A09A"
+                      >8 AM - 9 AM</span
+                    >
+                    <span
+                      class="custom-option selected"
+                      data-value="09A10A"
+                      >9 AM - 10 AM</span
+                    >
+                    <span class="custom-option" data-value="10A11A"
+                      >10 AM - 11 AM</span
+                    >
+                    <span class="custom-option" data-value="11A12P"
+                      >11 AM - 12 PM</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="main-actions-input" id="lunch-time">
+              <div class="main-actions-input-label">
+                <div class="main-actions-input-icon">
+                  <img
+                    src="./assets/images/icons/lunch_time_icon.png"
+                    alt="lunch_time_icon"
+                  />
+                </div>
+                <div class="main-actions-input-text">
+                  <span>set lunch time</span>
+                </div>
+              </div>
+              <div class="main-actions-input-list">
+                <div class="select">
+                  <div class="select-trigger">
+                    <span>8 AM - 9 AM</span>
+                    <div class="arrow">&#9660;</div>
+                  </div>
+                  <div class="custom-options">
+                    <span
+                      class="custom-option selected"
+                      data-value="08A09A"
+                      >8 AM - 9 AM</span
+                    >
+                    <span class="custom-option" data-value="09A10A"
+                      >9 AM - 10 AM</span
+                    >
+                    <span class="custom-option" data-value="10A11A"
+                      >10 AM - 11 AM</span
+                    >
+                    <span class="custom-option" data-value="11A12P"
+                      >11 AM - 12 PM</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="main-actions-input" id="night-time">
+              <div class="main-actions-input-label">
+                <div class="main-actions-input-icon">
+                  <img
+                    src="./assets/images/icons/nap_time_icon.png"
+                    alt="nap_time_icon"
+                  />
+                </div>
+                <div class="main-actions-input-text">
+                  <span>set nap time</span>
+                </div>
+              </div>
+              <div class="main-actions-input-list">
+                <div class="select">
+                  <div class="select-trigger">
+                    <span>8 AM - 9 AM</span>
+                    <div class="arrow">&#9660;</div>
+                  </div>
+                  <div class="custom-options">
+                    <span
+                      class="custom-option selected"
+                      data-value="08A09A"
+                      >8 AM - 9 AM</span
+                    >
+                    <span class="custom-option" data-value="09A10A"
+                      >9 AM - 10 AM</span
+                    >
+                    <span class="custom-option" data-value="10A11A"
+                      >10 AM - 11 AM</span
+                    >
+                    <span class="custom-option" data-value="11A12P"
+                      >11 AM - 12 PM</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="main-actions-message">
+            <span>good afternoon !!</span>
+          </div>
+          <div class="main-actions-button">
+            <span>party time!</span>
+          </div>
+        </div>
+        <div class="main-display main-display-lunch">
+          <h2 class="main-display-heading">
+            let's have some lunch !!
+          </h2>
+        </div>
+      </main>
+    </div>
+    <script src="./assets/scripts/script.js"></script>
+  </body>
+</html>
