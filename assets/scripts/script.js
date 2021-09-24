@@ -133,7 +133,7 @@ const setTimeState = (timeType, timeValue) => {
 };
 const loadData = async () => {
   for (const filename of dataFiles) {
-    await fetch(`../../data/${filename}.json`)
+    await fetch(`../data/${filename}.json`)
       .then((res) => res.json())
       .then((d) => (data[filename] = d));
   }
