@@ -12,6 +12,7 @@
   </head>
   <body>
     <div class="container">
+      <!-- header section start -->
       <header class="header-section">
         <div class="header-logo">
           <img
@@ -64,10 +65,16 @@
           </div>
         </div>
       </header>
+      <!-- header section end -->
+      <!-- main section start -->
       <main class="main-section">
+        <!-- main actions start -->
         <div class="main-actions">
+          <!-- main actions inputs start -->
           <div class="main-actions-inputs">
+            <!-- main actions - single input start -->
             <div class="main-actions-input" id="wakeup-time">
+              <!-- main actions - single input - label start -->
               <div class="main-actions-input-label">
                 <div class="main-actions-input-icon">
                   <img
@@ -79,6 +86,8 @@
                   <span>set wake up time</span>
                 </div>
               </div>
+              <!-- main actions - single input - label end -->
+              <!-- main actions - single input - dropdown start -->
               <div class="main-actions-input-list">
                 <div class="select">
                   <div class="select-trigger">
@@ -103,7 +112,10 @@
                   </div>
                 </div>
               </div>
+              <!-- main actions - single input - dropdown end -->
             </div>
+            <!-- main actions - single input end -->
+            <!-- main actions - single input start -->
             <div class="main-actions-input" id="lunch-time">
               <div class="main-actions-input-label">
                 <div class="main-actions-input-icon">
@@ -141,6 +153,8 @@
                 </div>
               </div>
             </div>
+            <!-- main actions - single input end -->
+            <!-- main actions - single input start -->
             <div class="main-actions-input" id="night-time">
               <div class="main-actions-input-label">
                 <div class="main-actions-input-icon">
@@ -178,7 +192,15 @@
                 </div>
               </div>
             </div>
+            <!-- main actions - single input end -->
+            <div
+              class="main-action-input-reset"
+              title="reset all schedules"
+            >
+              <span>reset</span>
+            </div>
           </div>
+          <!-- main actions inputs end -->
           <div class="main-actions-message">
             <span>good afternoon !!</span>
           </div>
@@ -186,12 +208,24 @@
             <span>party time!</span>
           </div>
         </div>
+        <!-- main actions end -->
         <div class="main-display main-display-lunch">
           <h2 class="main-display-heading">
             let's have some lunch !!
           </h2>
         </div>
       </main>
+      <!-- main section end -->
+    </div>
+
+    <!-- modal and overlay start -->
+    <div class="overlay hidden"></div>
+    <div class="modal hidden">
+      <div class="modal-close-btn" title="Cancel">&#10006;</div>
+      <div class="modal-content">
+        <div class="modal-content-text"></div>
+        <div class="modal-content-btn"><button>Yes</button></div>
+      </div>
     </div>
     <script src="./assets/scripts/script.js"></script>
   </body>
