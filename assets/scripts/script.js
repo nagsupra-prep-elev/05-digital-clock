@@ -56,8 +56,51 @@ const mainMessages = 'main-messages';
 const timeRanges = 'time-ranges';
 
 // app data
-const data = {};
-const dataFiles = [headingMessages, mainMessages, timeRanges];
+const data = {
+  'heading-messages': {
+    wakeup: 'wake up !!',
+    lunch: "let's have some lunch !!",
+    night: 'good night !!',
+    party: "it's party time !!",
+  },
+  'main-messages': {
+    wakeup: 'good morning !!',
+    lunch: 'good afternoon !!',
+    night: 'good night !!',
+  },
+  'time-ranges': {
+    wakeup: [
+      { text: '5 AM - 6 AM', value: '05A06A' },
+      { text: '6 AM - 7 AM', value: '06A07A' },
+      { text: '7 AM - 8 AM', value: '07A08A' },
+      { text: '8 AM - 9 AM', value: '08A09A' },
+      { text: '9 AM - 10 AM', value: '09A10A' },
+      { text: '10 AM - 11 AM', value: '10A11A' },
+    ],
+    lunch: [
+      { text: '11 AM - 12 PM', value: '11A12P' },
+      { text: '12 PM - 1 PM', value: '12P01P' },
+      { text: '1 PM - 2 PM', value: '01P02P' },
+      { text: '2 PM - 3 PM', value: '02P03P' },
+      { text: '3 PM - 4 PM', value: '03P04P' },
+      { text: '4 PM - 5 PM', value: '04P05P' },
+      { text: '5 PM - 6 PM', value: '05P06P' },
+      { text: '6 PM - 7 PM', value: '06P07P' },
+    ],
+    night: [
+      { text: '7 PM - 8 PM', value: '07P08P' },
+      { text: '8 PM - 9 PM', value: '08P09P' },
+      { text: '9 PM - 10 PM', value: '09P10P' },
+      { text: '10 PM - 11 PM', value: '10P11P' },
+      { text: '11 PM - 12 AM', value: '11P12A' },
+      { text: '12 AM - 1 AM', value: '12A01A' },
+      { text: '1 AM - 2 AM', value: '01A02A' },
+      { text: '2 AM - 3 AM', value: '02A03A' },
+      { text: '3 AM - 4 AM', value: '03A04A' },
+      { text: '4 AM - 5 AM', value: '04A05A' },
+    ],
+  },
+};
 
 // html template for runtime
 const newTimeItem = (text, value) => `
@@ -70,7 +113,7 @@ const newTimeItem = (text, value) => `
 //#region - states
 let currentTime = new Date();
 const allTimeStates = {
-  wakeup: +localStorage.getItem('time-wakeup') || 8,
+  wakeup: +localStorage.getItem('time-wakeup') || 7,
   lunch: +localStorage.getItem('time-lunch') || 12,
   night: +localStorage.getItem('time-night') || 20,
 };
@@ -131,13 +174,6 @@ const setTimeState = (timeType, timeValue) => {
   allTimeStates[timeState] = getRange(timeValue);
   checkTimeState(true);
 };
-const loadData = async () => {
-  for (const filename of dataFiles) {
-    await fetch(`../data/${filename}.json`)
-      .then((res) => res.json())
-      .then((d) => (data[filename] = d));
-  }
-};
 const loadDropdownData = () => {
   allDropdownElems.forEach((elem) => {
     let range = elem.parentElement.id.slice(0, -5);
@@ -197,7 +233,6 @@ const resetTimeStates = () => {
 
 //#region - initial load
 const init = async () => {
-  await loadData();
   loadDropdownData();
   checkTimeState(true);
   allDropdownOptionsListElems.forEach((options) => {
