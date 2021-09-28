@@ -185,6 +185,22 @@ const loadDropdownData = () => {
       )
     );
   });
+  allDropdownOptionsListElems.forEach((options) => {
+    const timeType =
+      options.parentElement.parentElement.parentElement.attributes[
+        'id'
+      ].value.slice(0, -5);
+    options.childNodes.forEach((node) => {
+      if (node.nodeName === 'SPAN') {
+        node.classList.remove(selected);
+        if (
+          getRange(node.dataset['value']) === allTimeStates[timeType]
+        ) {
+          node.classList.add('selected');
+        }
+      }
+    });
+  });
 };
 const updateUI = () => {
   mainDisplayElem.classList.replace(
@@ -228,22 +244,6 @@ const resetTimeStates = () => {
 const init = async () => {
   loadDropdownData();
   checkTimeState(true);
-  allDropdownOptionsListElems.forEach((options) => {
-    const timeType =
-      options.parentElement.parentElement.parentElement.attributes[
-        'id'
-      ].value.slice(0, -5);
-    options.childNodes.forEach((node) => {
-      if (node.nodeName === 'SPAN') {
-        node.classList.remove(selected);
-        if (
-          getRange(node.dataset['value']) === allTimeStates[timeType]
-        ) {
-          node.classList.add('selected');
-        }
-      }
-    });
-  });
   updateUI();
 };
 //#endregion - initial load
