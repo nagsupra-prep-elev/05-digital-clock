@@ -46,8 +46,8 @@ const modalContentBtn = document.querySelector(
 
 //#region - data
 const wakeup = 'wakeup';
-const night = 'night';
 const lunch = 'lunch';
+const night = 'night';
 const general = 'general';
 const party = 'party';
 const open = 'open';
@@ -55,6 +55,10 @@ const selected = 'selected';
 const headingMessages = 'heading-messages';
 const mainMessages = 'main-messages';
 const timeRanges = 'time-ranges';
+
+const wakeupTime = 7;
+const lunchTime = 12;
+const nightTime = 20;
 
 // app data
 const data = {
@@ -109,9 +113,9 @@ const newTimeItem = (text, value) => `
 //#region - states
 let currentTime = new Date();
 const allTimeStates = {
-  wakeup: +localStorage.getItem('time-wakeup') || 7,
-  lunch: +localStorage.getItem('time-lunch') || 12,
-  night: +localStorage.getItem('time-night') || 20,
+  wakeup: +localStorage.getItem('time-wakeup') || wakeupTime,
+  lunch: +localStorage.getItem('time-lunch') || lunchTime,
+  night: +localStorage.getItem('time-night') || nightTime,
 };
 let timeState;
 
@@ -232,9 +236,9 @@ const resetTimeStates = () => {
   localStorage.removeItem('time-wakeup');
   localStorage.removeItem('time-lunch');
   localStorage.removeItem('time-night');
-  allTimeStates.wakeup = 8;
-  allTimeStates.lunch = 12;
-  allTimeStates.night = 20;
+  allTimeStates.wakeup = wakeupTime;
+  allTimeStates.lunch = lunchTime;
+  allTimeStates.night = nightTime;
   loadDropdownData();
   checkTimeState(true);
   updateUI();
