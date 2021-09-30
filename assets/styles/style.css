@@ -43,7 +43,6 @@
   --lg-color-3: #fc5eff;
   --lg-color-4: #f1a7c5;
   --primary-font-family: 'Manrope', sans-serif;
-  /* --heading-font-family-1: 'bauhausregular'; */
   --heading-font-family-1: 'bauhaus_hv_btheavy';
 }
 /* #endregion : global-styles */
@@ -263,7 +262,6 @@ body {
   top: 100%;
   left: 0;
   right: 0;
-  /* border: 1px solid var(--border-grey); */
   box-shadow: 1px 5px 4px 1px var(--Shadow-grey);
   border-radius: 4px;
   background: #fff;
@@ -394,6 +392,10 @@ body {
   background: url('../images/backgrounds/good-night.png')
     var(--background-color-white) right bottom/ 480px no-repeat;
 }
+.main-display-general {
+  background: url('../images/backgrounds/regular.png')
+    var(--background-color-white) right 10px bottom 10px/ 180px no-repeat;
+}
 .main-display-party {
   background: url('../images/backgrounds/lets-party.png')
     var(--background-color-white) right bottom/ 480px no-repeat;
@@ -443,7 +445,7 @@ body {
   width: 30rem;
   height: 15rem;
   border-radius: 10px;
-  background-color: var(--background-color-secondary-3);
+  background-color: var(--background-color-white);
   position: fixed;
   top: 50%;
   left: 50%;
@@ -485,15 +487,17 @@ body {
 .modal-content-btn button {
   width: 60px;
   height: 30px;
-  border: none;
-  color: var(--primary-white);
-  background-color: var(--background-color-secondary-5);
+  border: 2px solid var(--background-color-secondary-5);
+  background-color: var(--background-color-white);
+  color: var(--background-color-secondary-5);
+  font-weight: 500;
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.1s linear;
 }
 .modal-content-btn button:hover {
-  border: 1px solid var(--background-color-primary);
+  color: var(--primary-white);
+  background-color: var(--background-color-secondary-5);
   transform: scale(1.05);
 }
 /* #endregion : modal and overlays */

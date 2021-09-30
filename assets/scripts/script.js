@@ -48,6 +48,7 @@ const modalContentBtn = document.querySelector(
 const wakeup = 'wakeup';
 const night = 'night';
 const lunch = 'lunch';
+const general = 'general';
 const party = 'party';
 const open = 'open';
 const selected = 'selected';
@@ -61,6 +62,7 @@ const data = {
     wakeup: 'wake up !!',
     lunch: "let's have some lunch !!",
     night: 'good night !!',
+    general: 'Sabotage !!',
     party: "it's party time !!",
   },
   'main-messages': {
@@ -144,19 +146,18 @@ const checkTimeState = (init = false) => {
     init
   ) {
     const currentHours = currentTime.getHours();
-    if (
-      currentHours >= allTimeStates.wakeup &&
-      currentHours < allTimeStates.lunch
-    ) {
-      timeState = wakeup;
-    } else if (
-      currentHours >= allTimeStates.lunch &&
-      (currentHours < allTimeStates.night ||
-        allTimeStates.night < allTimeStates.wakeup)
-    ) {
-      timeState = lunch;
-    } else {
-      timeState = night;
+    switch (currentHours) {
+      case allTimeStates.wakeup:
+        timeState = wakeup;
+        break;
+      case allTimeStates.lunch:
+        timeState = lunch;
+        break;
+      case allTimeStates.night:
+        timeState = night;
+        break;
+      default:
+        timeState = general;
     }
     updateUI();
   }
